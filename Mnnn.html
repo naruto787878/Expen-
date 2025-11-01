@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Country Information</title>
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Use Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom styles for the loader */
+        .loader {
+            border-top-color: #3498db;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900 min-h-screen p-4 sm:p-8">
+
+    <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-6 sm:p-10">
+
+        <header class="text-center border-b pb-6 mb-6">
+            <h1 class="text-3xl sm:text-4xl font-bold text-blue-600">
+                Country Information Hub
+            </h1>
+            <p class="text-lg text-gray-600 mt-2">
+                Use the AI features to discover facts and travel ideas for each country.
+            </p>
+        </header>
+
+        <!-- Main content area for all countries -->
+        <main class="space-y-10">
+            
+            <!-- United States Section -->
+            <article id="usa" class="country-article border border-gray-200 rounded-lg p-5">
+                <h2 class="text-2xl font-semibold mb-2">United States of America</h2>
+                <p class="text-gray-700 mb-3">The United States of America (U.S.A. or USA), commonly known as the United States (U.S. or US) or America, is a country primarily located in North America.</p>
+                <h3 class="text-lg font-semibold">Key Facts:</h3>
+                <ul class="list-disc list-inside text-gray-700 mb-4 ml-4">
+                    <li><strong>Capital:</strong> Washington, D.C.</li>
+                    <li><strong>Largest City:</strong> New York City</li>
+                    <li><strong>Currency:</strong> United States Dollar (USD)</li>
+                </ul>
+                
+                <!-- Gemini Feature Buttons Group -->
+                <div class="flex flex-wrap gap-3 mb-4">
+                    <button 
+                        class="gemini-button-fact bg-blue-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors"
+                        data-country="United States of America">
+                        ✨ Get Fun Fact
+                    </button>
+                    <button 
+                        class="gemini-button-travel bg-green-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-green-600 transition-colors"
+                        data-country="United States of America">
+                        ✈️ Get Travel Idea
+                    </button>
+                </div>
+                
+                <!-- AI-generated content will appear here -->
+                <div class="gemini-result-box-fact mt-2 p-4 bg-blue-50 rounded-md border border-blue-200" style="display: none;"></div>
+                <div class="gemini-result-box-travel mt-2 p-4 bg-green-50 rounded-md border border-green-200" style="display: none;"></div>
+            </article>
+            
+            <!-- Japan Section -->
+            <article id="japan" class="country-article border border-gray-200 rounded-lg p-5">
+                <h2 class="text-2xl font-semibold mb-2">Japan</h2>
+                <p class="text-gray-700 mb-3">Japan is an island country in East Asia. It is situated in the northwest Pacific Ocean and is bordered on the west by the Sea of Japan.</p>
+                <h3 class="text-lg font-semibold">Key Facts:</h3>
+                <ul class="list-disc list-inside text-gray-700 mb-4 ml-4">
+                    <li><strong>Capital:</strong> Tokyo</li>
+                    <li><strong>Official Language:</strong> Japanese</li>
+                    <li><strong>Currency:</strong> Japanese Yen (JPY)</li>
+                </ul>
+
+                <!-- Gemini Feature Buttons Group -->
+                <div class="flex flex-wrap gap-3 mb-4">
+                    <button 
+                        class="gemini-button-fact bg-blue-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors"
+                        data-country="Japan">
+                        ✨ Get Fun Fact
+                    </button>
+                    <button 
+                        class="gemini-button-travel bg-green-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-green-600 transition-colors"
+                        data-country="Japan">
+                        ✈️ Get Travel Idea
+                    </button>
+                </div>
+
+                <!-- AI-generated content will appear here -->
+                <div class="gemini-result-box-fact mt-2 p-4 bg-blue-50 rounded-md border border-blue-200" style="display: none;"></div>
+                <div class="gemini-result-box-travel mt-2 p-4 bg-green-50 rounded-md border border-green-200" style="display: none;"></div>
+            </article>
+
+            <!-- Brazil Section -->
+            <article id="brazil" class="country-article border border-gray-200 rounded-lg p-5">
+                <h2 class="text-2xl font-semibold mb-2">Brazil</h2>
+                <p class="text-gray-700 mb-3">Brazil, officially the Federative Republic of Brazil, is the largest country in South America and in Latin America.</p>
+                <h3 class="text-lg font-semibold">Key Facts:</h3>
+                <ul class="list-disc list-inside text-gray-700 mb-4 ml-4">
+                    <li><strong>Capital:</strong> Brasília</li>
+                    <li><strong>Official Language:</strong> Portuguese</li>
+                    <li><strong>Currency:</strong> Brazilian Real (BRL)</li>
+                </ul>
+                
+                <!-- Gemini Feature Buttons Group -->
+                <div class="flex flex-wrap gap-3 mb-4">
+                    <button 
+                        class="gemini-button-fact bg-blue-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors"
+                        data-country="Brazil">
+                        ✨ Get Fun Fact
+                    </button>
+                    <button 
+                        class="gemini-button-travel bg-green-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-green-600 transition-colors"
+                        data-country="Brazil">
+                        ✈️ Get Travel Idea
+                    </button>
+                </div>
+
+                <!-- AI-generated content will appear here -->
+                <div class="gemini-result-box-fact mt-2 p-4 bg-blue-50 rounded-md border border-blue-200" style="display: none;"></div>
+                <div class="gemini-result-box-travel mt-2 p-4 bg-green-50 rounded-md border border-green-200" style="display: none;"></div>
+            </article>
+            
+            <!-- Nigeria Section -->
+            <article id="nigeria" class="country-article border border-gray-200 rounded-lg p-5">
+                <h2 class="text-2xl font-semibold mb-2">Nigeria</h2>
+                <p class="text-gray-700 mb-3">Nigeria, officially the Federal Republic of Nigeria, is a country in West Africa. It is the most populous country in Africa.</p>
+                <h3 class="text-lg font-semibold">Key Facts:</h3>
+                <ul class="list-disc list-inside text-gray-700 mb-4 ml-4">
+                    <li><strong>Capital:</strong> Abuja</li>
+                    <li><strong>Official Language:</strong> English</li>
+                    <li><strong>Currency:</strong> Nigerian Naira (NGN)</li>
+                </ul>
+                
+                <!-- Gemini Feature Buttons Group -->
+                <div class="flex flex-wrap gap-3 mb-4">
+                    <button 
+                        class="gemini-button-fact bg-blue-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors"
+                        data-country="Nigeria">
+                        ✨ Get Fun Fact
+                    </button>
+                    <button 
+                        class="gemini-button-travel bg-green-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-green-600 transition-colors"
+                        data-country="Nigeria">
+                        ✈️ Get Travel Idea
+                    </button>
+                </div>
+
+                <!-- AI-generated content will appear here -->
+                <div class="gemini-result-box-fact mt-2 p-4 bg-blue-50 rounded-md border border-blue-200" style="display: none;"></div>
+                <div class="gemini-result-box-travel mt-2 p-4 bg-green-50 rounded-md border border-green-200" style="display: none;"></div>
+            </article>
+            
+        </main>
+    </div>
+
+    <!-- Error Modal (hidden by default) -->
+    <div id="error-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50" style="display: none;">
+        <div class="bg-white rounded-lg shadow-xl p-6 max-w-sm w-full">
+            <h3 class="text-xl font-bold text-red-600 mb-4">Error</h3>
+            <p id="error-message" class="text-gray-700 mb-6">An error occurred.</p>
+            <button id="close-modal-button" class="w-full bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript for Gemini API calls -->
+    <script>
+        // --- Constants ---
+        const API_KEY = ""; // Kept as an empty string.
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`;
+        const MAX_RETRIES = 3;
+
+        // --- DOM Elements ---
+        const errorModal = document.getElementById('error-modal');
+        const errorMessage = document.getElementById('error-message');
+        const closeModalButton = document.getElementById('close-modal-button');
+
+        /**
+         * Attaches click event listeners to all Gemini buttons on the page.
+         */
+        function initializeButtons() {
+            // Attach listener for Fun Fact buttons
+            const factButtons = document.querySelectorAll('.gemini-button-fact');
+            factButtons.forEach(button => {
+                button.addEventListener('click', handleFactRequest);
+            });
+
+            // Attach listener for Travel Idea buttons
+            const travelButtons = document.querySelectorAll('.gemini-button-travel');
+            travelButtons.forEach(button => {
+                button.addEventListener('click', handleTravelRequest);
+            });
+        }
+
+        /**
+         * Hides the error modal.
+         */
+        closeModalButton.addEventListener('click', () => {
+            errorModal.style.display = 'none';
+        });
+
+        /**
+         * Displays an error message in a modal.
+         * @param {string} message - The error message to show.
+         */
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorModal.style.display = 'flex';
+        }
+        
+        // --- Core LLM Request Handlers ---
+
+        /**
+         * Handles the click event for a "Get Fun Fact" button.
+         * @param {Event} event - The click event object.
+         */
+        async function handleFactRequest(event) {
+            const button = event.target;
+            const countryName = button.dataset.country;
+            const article = button.closest('.country-article');
+            const resultBox = article.querySelector('.gemini-result-box-fact');
+            
+            const systemPrompt = "You are a helpful assistant who provides interesting, single-paragraph facts about places.";
+            const userQuery = `Tell me one interesting fun fact about ${countryName}. Keep it short and engaging, ideally 1-3 sentences.`;
+
+            await executeGeminiRequest({
+                button,
+                resultBox,
+                systemPrompt,
+                userQuery,
+                baseText: '✨ Get Fun Fact',
+                loadingText: 'Generating Fact...',
+                generatedText: '✨ Get Another Fact'
+            });
+        }
+        
+        /**
+         * Handles the click event for a "Get Travel Idea" button.
+         * @param {Event} event - The click event object.
+         */
+        async function handleTravelRequest(event) {
+            const button = event.target;
+            const countryName = button.dataset.country;
+            const article = button.closest('.country-article');
+            const resultBox = article.querySelector('.gemini-result-box-travel');
+            
+            const systemPrompt = "You are a creative travel planner. Provide a brief, enticing travel suggestion for the user.";
+            const userQuery = `Suggest a unique and compelling 3-day travel itinerary or experience for visiting ${countryName}. Format the response with bold titles for each day.`;
+
+            await executeGeminiRequest({
+                button,
+                resultBox,
+                systemPrompt,
+                userQuery,
+                baseText: '✈️ Get Travel Idea',
+                loadingText: 'Planning Trip...',
+                generatedText: '✈️ Get New Idea'
+            });
+        }
+
+        /**
+         * Unified function to execute the Gemini API request.
+         * @param {object} params - Parameters including DOM elements, prompts, and button texts.
+         */
+        async function executeGeminiRequest({ button, resultBox, systemPrompt, userQuery, baseText, loadingText, generatedText }) {
+             if (!resultBox) {
+                showError("Internal error: Could not find result box.");
+                return;
+            }
+
+            // Show loading state
+            button.disabled = true;
+            button.textContent = loadingText;
+            resultBox.style.display = 'block';
+            resultBox.innerHTML = `
+                <div class="flex items-center">
+                    <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-400 h-6 w-6"></div>
+                    <span class="ml-3 text-gray-500">${loadingText}</span>
+                </div>`;
+
+            try {
+                // Construct the payload
+                const payload = {
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    systemInstruction: {
+                        parts: [{ text: systemPrompt }]
+                    },
+                };
+
+                // Call the API
+                const text = await callGeminiAPI(payload);
+                
+                // Convert Markdown to HTML (simple paragraphs and bold for readability)
+                const htmlContent = text.split('\n').map(line => {
+                    if (line.trim().startsWith('**') && line.trim().endsWith('**')) {
+                        return `<p class="font-bold mt-2">${line.replace(/\*\*/g, '')}</p>`;
+                    }
+                    return `<p>${line.replace(/\*\*/g, '<strong>').replace(/__ /g, '<strong>').replace(/__/g, '</strong>')}</p>`;
+                }).join('');
+                
+                // Display the result
+                resultBox.innerHTML = htmlContent;
+                button.textContent = generatedText;
+
+            } catch (error) {
+                console.error('Gemini API Error:', error);
+                const errorText = error.message || "An unknown error occurred. Please try again.";
+                resultBox.innerHTML = `<p class="text-red-600">Error: ${errorText}</p>`;
+                showError(errorText);
+                button.textContent = baseText; // Revert on failure
+            } finally {
+                // Restore button state
+                button.disabled = false;
+            }
+        }
+
+        /**
+         * Calls the Gemini API with exponential backoff for retries.
+         * @param {object} payload - The payload to send to the API.
+         * @returns {Promise<string>} - The generated text from the model.
+         */
+        async function callGeminiAPI(payload) {
+            let attempt = 0;
+            let delay = 1000; // 1 second initial delay
+
+            while (attempt < MAX_RETRIES) {
+                try {
+                    const response = await fetch(API_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        // Handle non-OK responses (e.g., 500, 503)
+                        if (response.status >= 500) {
+                            throw new Error(`Server error (${response.status}). Retrying...`);
+                        }
+                        // Handle client errors (e.g., 400, 404)
+                        const errorData = await response.json();
+                        throw new Error(errorData.error?.message || `HTTP error! Status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    const candidate = result.candidates?.[0];
+
+                    if (candidate && candidate.content?.parts?.[0]?.text) {
+                        return candidate.content.parts[0].text;
+                    } else {
+                        // Handle cases where the response is missing content
+                        throw new Error("No content received from the model.");
+                    }
+
+                } catch (error) {
+                    console.warn(`Attempt ${attempt + 1} failed: ${error.message}`);
+                    attempt++;
+                    if (attempt >= MAX_RETRIES) {
+                        throw new Error(`Failed to fetch from Gemini API after ${MAX_RETRIES} attempts. ${error.message}`);
+                    }
+                    // Wait with exponential backoff
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2; // Double the delay for the next retry
+                }
+            }
+        }
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', initializeButtons);
+
+    </script>
+</body>
+</html>
